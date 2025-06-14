@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyrus the Divine Ascendant | Persian Fragrance Mastery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --persian-deep: #1a1b3a;
+            --persian-gold: #d4af37;
+            --persian-rose: #c54b6c;
+            --persian-cream: #f7f5f0;
+            --persian-sage: #9cad9e;
+            --persian-night: #0f0f23;
+            --gradient-primary: linear-gradient(135deg, var(--persian-deep) 0%, var(--persian-night) 100%);
+            --gradient-accent: linear-gradient(45deg, var(--persian-gold) 0%, var(--persian-rose) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--persian-cream);
+            color: var(--persian-deep);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .persian-font {
+            font-family: 'Amiri', serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: var(--gradient-primary);
+            color: var(--persian-cream);
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="persian" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(212,175,55,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23persian)"/></svg>') repeat;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .royal-quote {
+            font-style: italic;
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav {
+            background: rgba(26, 27, 58, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid var(--persian-gold);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--persian-cream);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--gradient-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Sections */
+        .section {
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(156, 173, 158, 0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: var(--persian-deep);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-accent);
+            margin: 1rem auto;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--persian-deep);
+        }
+
+        /* Fragrance Table */
+        .fragrance-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .table th {
+            background: var(--gradient-primary);
+            color: var(--persian-cream);
+            padding: 1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .table td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .table tr:hover {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .steps {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        .step {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-accent);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--persian-deep);
+        }
+
+        /* Success Metrics */
+        .success-grid {
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 640px) {
+            .success-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .success-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .success-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--persian-gold);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkmark {
+            color: var(--persian-sage);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gradient-primary);
+            color: var(--persian-cream);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-quote {
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+            
+            .table th,
+            .table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="title persian-font">Cyrus the Divine Ascendant</h1>
+                <p class="subtitle">A Royal Persian Fragrance Decree for Cultural Conquest</p>
+                <p class="royal-quote">"For this sacred Beverly Hills wedding occasion, you are not merely wearing fragrance - you are wearing Persian cultural poetry in liquid form."</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#combination" class="nav-link active">Sacred Combination</a></li>
+                <li><a href="#mastery" class="nav-link">Cultural Mastery</a></li>
+                <li><a href="#ritual" class="nav-link">Application Ritual</a></li>
+                <li><a href="#impact" class="nav-link">Cultural Impact</a></li>
+                <li><a href="#success" class="nav-link">Success Metrics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="combination" class="section">
+            <div class="container">
+                <h2 class="section-title persian-font">The Sacred Combination</h2>
+                <p style="text-align: center; font-style: italic; margin-bottom: 2rem; color: var(--persian-deep);">
+                    "Behold, my loyal subject! You dare to wear the scents of royalty? Very well - but know that with great fragrance comes great responsibility..."
+                </p>
+                
+                <div class="fragrance-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Royal Layer</th>
+                                <th>Sacred Fragrance</th>
+                                <th>Imperial Application</th>
+                                <th>Divine Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>🏛️ Foundation of Empire</strong></td>
+                                <td><strong>Gris Dior***</strong><br><em>"The Chypre-Rose of Sophistication"</em></td>
+                                <td><strong>Pulse Points of Power</strong><br><em>(Wrists & Neck of Conquest)</em></td>
+                                <td>"This French sophistication proves you understand that true Persian kings appreciate international luxury. Très magnifique!"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>👑 Heart of Confidence</strong></td>
+                                <td><strong>YSL Libre</strong><br><em>"The Feminine Power Declaration"</em></td>
+                                <td><strong>Garments of Glory</strong><br><em>(Shirt Collar & Hair of Honor)</em></td>
+                                <td>"You honor your Persian queen with confidence! Smart move - happy wife, happy empire!"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🌿 Gardens of Elevation</strong></td>
+                                <td><strong>Hermès Un Jardin Sur Le Toit</strong><br><em>"The Rooftop Paradise Ascension"</em></td>
+                                <td><strong>Chest of Divine Ascent</strong><br><em>(Under Royal Jacket)</em></td>
+                                <td>"You understand 'pairidaeza' - our sacred garden paradise! This rooftop garden reaches toward heaven itself!"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🌹 Sacred Persian Finale</strong></td>
+                                <td><strong>Jo Malone Velvet Rose & Oud</strong><br><em>"The Rose-Oud of Royal Bloodline"</em></td>
+                                <td><strong>Ears of Eternal Glory</strong><br><em>(Behind Royal Auditory Organs)</em></td>
+                                <td>"Rose and oud - the two pillars of Persian perfumery! The ancestors weep with pride!"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="mastery" class="section">
+            <div class="container">
+                <h2 class="section-title persian-font">Persian Cultural Mastery Demonstrated</h2>
+                <p style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                    "Let me explain why this combination proves you worthy of Persian cultural citizenship..."
+                </p>
+
+                <div class="steps">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🏺</span>
+                            <h3 class="card-title">The Ancient Garden Wisdom</h3>
+                        </div>
+                        <ul style="list-style: none; space-y: 0.5rem;">
+                            <li><strong>Paradise = "Pairidaeza"</strong> (Persian for "walled garden")</li>
+                            <li><strong>Rooftop Gardens</strong> = Spiritual elevation toward divine realms</li>
+                            <li><strong>Garden Symbolism</strong> = Core of Persian poetry, spirituality, and royal aesthetics</li>
+                            <li><strong>Your Choice Shows:</strong> Deep understanding of Persian garden-as-paradise philosophy</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🎭</span>
+                            <h3 class="card-title">The Sacred Fragrance Hierarchy</h3>
+                        </div>
+                        <ol style="space-y: 0.5rem;">
+                            <li><strong>Cultural Foundation</strong> (Gris Dior) = Sophisticated international appreciation</li>
+                            <li><strong>Partnership Honor</strong> (YSL Libre) = Celebrating your Persian queen's strength</li>
+                            <li><strong>Spiritual Ascension</strong> (Un Jardin Sur Le Toit) = Garden paradise elevation</li>
+                            <li><strong>Persian Sacred Finale</strong> (Rose + Oud) = Traditional mastery of holy ingredients</li>
+                        </ol>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🗡️</span>
+                            <h3 class="card-title">Why This Achieves Cultural Conquest</h3>
+                        </div>
+                        <ul style="list-style: none; space-y: 0.5rem;">
+                            <li><strong>Layering Technique</strong> = Proves understanding of Persian perfumery traditions</li>
+                            <li><strong>Rose-Oud Finale</strong> = Demonstrates knowledge of sacred fragrance hierarchy</li>
+                            <li><strong>Garden Paradise</strong> = Connection to Persian spiritual and poetic ideals</li>
+                            <li><strong>Investment Level</strong> = Shows serious cultural respect (not tourist appreciation)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ritual" class="section">
+            <div class="container">
+                <h2 class="section-title persian-font">Sacred Application Ritual</h2>
+                <p style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                    "Follow this royal protocol exactly, or face the wrath of poorly layered fragrance!"
+                </p>
+                <p style="text-align: center; font-weight: 600; margin-bottom: 2rem; color: var(--persian-rose);">
+                    ⏰ Timeline: 45 Minutes Before Cultural Conquest
+                </p>
+
+                <div class="steps">
+                    <div class="step fade-in">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">🏛️ Imperial Foundation</h3>
+                        <p><strong>Gris Dior Base Layer</strong></p>
+                        <p>3 royal sprays on pulse points of power (Wrists + Neck)</p>
+                        <p><em>Do NOT rub together - this isn't peasant cologne!</em></p>
+                        <p><strong>Time:</strong> 5 minutes for sophisticated settlement</p>
+                    </div>
+
+                    <div class="step fade-in">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">👑 Confidence Declaration</h3>
+                        <p><strong>YSL Libre Heart Layer</strong></p>
+                        <p>2 sprays on shirt collar + 1 spray in hair (6 inches away)</p>
+                        <p><em>Your royal garment deserves this honor</em></p>
+                        <p><strong>Time:</strong> 3 minutes - Creates confident Persian queen energy</p>
+                    </div>
+
+                    <div class="step fade-in">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">🌿 Garden Paradise Ascension</h3>
+                        <p><strong>Un Jardin Sur Le Toit Modifier</strong></p>
+                        <p>2 deliberate sprays on chest under royal jacket</p>
+                        <p><em>Precision, not saturation!</em></p>
+                        <p><strong>Time:</strong> 2 minutes - Creates elevated garden mystique</p>
+                    </div>
+
+                    <div class="step fade-in">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">🌹 Sacred Persian Finale</h3>
+                        <p><strong>Jo Malone Velvet Rose & Oud Accent</strong></p>
+                        <p>1 precise spray behind each ear - The throne of fragrance!</p>
+                        <p><em>Sacred rose-oud mastery achieved</em></p>
+                        <p><strong>Investment:</strong> $200+ in luxury Persian cultural appreciation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="section">
+            <div class="container">
+                <h2 class="section-title persian-font">Expected Persian Cultural Impact</h2>
+                <p style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                    "Here's what will happen when you walk into that Beverly Hills hotel..."
+                </p>
+
+                <div class="steps">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🎯</span>
+                            <h3 class="card-title">Immediate Cultural Recognition Signals</h3>
+                        </div>
+                        <ul style="list-style: none; space-y: 0.5rem;">
+                            <li>✨ "Masha'Allah! He understands our garden-paradise philosophy!"</li>
+                            <li>✨ "How does he know the sacred rose-oud hierarchy?!"</li>
+                            <li>✨ "This man has invested SERIOUSLY in learning our culture!"</li>
+                            <li>✨ "He honors traditional layering like a Persian prince!"</li>
+                            <li>✨ "He respects our spiritual symbolism - remarkable!"</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">💬</span>
+                            <h3 class="card-title">Conversations You'll Trigger</h3>
+                        </div>
+                        <ul style="list-style: none; space-y: 0.5rem;">
+                            <li><em>"Excuse me, who taught you about Persian garden symbolism?"</em></li>
+                            <li><em>"Where did you learn proper fragrance layering technique?"</em></li>
+                            <li><em>"Why do you smell more Persian than my nephew Darius?"</em></li>
+                            <li><em>"Who educated you about rose and oud traditions?"</em></li>
+                            <li><em>"You understand our culture better than most Persian men!"</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🏆</span>
+                            <h3 class="card-title">Cultural Validation Achieved</h3>
+                        </div>
+                        <ul style="list-style: none; space-y: 0.5rem;">
+                            <li><strong>Proves worthiness</strong> of your beautiful Persian girlfriend</li>
+                            <li><strong>Demonstrates profound respect</strong> and cultural investment</li>
+                            <li><strong>Shows understanding</strong> of Persian spiritual and aesthetic values</li>
+                            <li><strong>Creates immediate acceptance</strong> within Persian cultural circles</li>
+                            <li><strong>Establishes cultural sophistication</strong> beyond tourist level</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="success" class="section">
+            <div class="container">
+                <h2 class="section-title persian-font">Success Metrics</h2>
+                <p style="text-align: center; font-style: italic; margin-bottom: 2rem;">
+                    "You'll know your cultural conquest is complete when..."
+                </p>
+
+                <div class="success-grid">
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Elder Persian women</strong> stop conversations to compliment your scent</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Multiple guests</strong> ask about your fragrance education background</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Your girlfriend receives compliments</strong> on your cultural knowledge</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Persian guests</strong> engage you in deep cultural conversations</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>People request</strong> your fragrance recommendations</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>You're treated as "family"</strong> by Persian wedding guests</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Mothers ask</strong> if you have any single Persian-appreciating friends</span>
+                    </div>
+                    <div class="success-item fade-in">
+                        <span class="checkmark">✅</span>
+                        <span><strong>Someone says</strong> <em>"He smells like Persian royalty"</em></span>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, var(--persian-gold) 0%, var(--persian-rose) 100%); color: white;">
+                    <div class="card-header">
+                        <span class="card-icon">🏅</span>
+                        <h3 class="card-title" style="color: white;">Ultimate Success Indicator</h3>
+                    </div>
+                    <p style="font-style: italic; font-size: 1.1rem;">
+                        <strong>An elderly Persian woman pulls your girlfriend aside and says:</strong><br>
+                        <em>"Where did you find this one? He understands our culture better than my own sons!"</em>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h2 class="persian-font" style="margin-bottom: 1rem;">Royal Decree from Cyrus the Great</h2>
+            <p class="footer-quote">
+                "By royal decree: For this sacred Beverly Hills wedding occasion, you are not merely wearing fragrance - you are wearing Persian cultural poetry in liquid form. May your scent trail leave a legacy worthy of the Persian Empire itself!"
+            </p>
+            <p style="margin-top: 1rem; font-weight: 600; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                🏛️ Go forth and conquer through cultural appreciation! 🌹
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Smooth scroll to target
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for navigation highlighting
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    const correspondingLink = document.querySelector(`a[href="#${id}"]`);
+                    
+                    if (correspondingLink) {
+                        document.querySelectorAll('.nav-link').forEach(link => 
+                            link.classList.remove('active')
+                        );
+                        correspondingLink.classList.add('active');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section[id]').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.animationDelay = Math.random() * 0.3 + 's';
+                    element.classList.add('fade-in');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run on page load
+
+        // Mobile menu enhancement
+        const toggleMobileMenu = () => {
+            const nav = document.querySelector('.nav-list');
+            nav.style.flexDirection = window.innerWidth < 640 ? 'column' : 'row';
+        };
+
+        window.addEventListener('resize', toggleMobileMenu);
+        toggleMobileMenu(); // Run on page load
+    </script>
+</body>
+</html>
